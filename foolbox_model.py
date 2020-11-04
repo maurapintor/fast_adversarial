@@ -3,7 +3,6 @@ import torch
 
 model_urls = {
     'MNIST' : "https://www.dropbox.com/s/9onr3jfsuc3b4dh/mnist.pth?dl=1",
-    'CIFAR10': "https://www.dropbox.com/s/ppydug8zefsrdqn/cifar10_wrn28-10.pth?dl=1"
 }
 
 def create(dataset='MNIST'):
@@ -15,9 +14,6 @@ def create(dataset='MNIST'):
     if dataset == 'MNIST':
         from fast_adv.models.mnist import SmallCNN
         model = SmallCNN()
-    elif dataset == 'CIFAR10':
-        from fast_adv.models.cifar10 import wide_resnet
-        model = wide_resnet(depth=28, num_classes=10)
     else:
         raise ValueError("Model not available.")
 
