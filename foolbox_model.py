@@ -17,7 +17,7 @@ def create(dataset='MNIST'):
         model = SmallCNN()
     elif dataset == 'CIFAR10':
         from fast_adv.models.cifar10 import wide_resnet
-        model = wide_resnet()
+        model = wide_resnet(depth=28, num_classes=10)
     else:
         raise ValueError("Model not available.")
 
